@@ -1,0 +1,16 @@
+{
+	"id": "gotobed",
+	"name": "Go to bed, Minty",
+	"display_name": "Bedtime",
+	"author": ["wingedcatgirl"],
+	"description": "A mod that deletes the New Run button from the game-end screen. No 'just one more run' for you.",
+	"prefix": "sleep",
+	"main_file": "gotobed.lua",
+	"priority": 10,
+	"badge_colour": "CA7CA7",
+	"badge_text_colour": "FFFFFF",
+	"version": "1.0.0",
+	"dependencies": [
+        "Lovely"
+    ],
+}
