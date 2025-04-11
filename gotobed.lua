@@ -39,7 +39,7 @@ GTB.DIELABEL = function()
         (GTB.config.quit_on_die or
         (GTB.config.quit_on_win and G.GAME.won))
         and GTB.isItBedtime()
-    then return "b_quit_cap" else return "b_start_new_run" end
+    then return "b_gotobed" else return "b_start_new_run" end
 end
 
 GTB.WINBUTTON = function()
@@ -47,7 +47,7 @@ GTB.WINBUTTON = function()
 end
 
 GTB.WINLABEL = function()
-    if GTB.config.quit_on_win and GTB.isItBedtime() then return "b_quit_cap" else return "b_start_new_run" end
+    if GTB.config.quit_on_win and GTB.isItBedtime() then return "b_gotobed" else return "b_start_new_run" end
 end
 
 GTB.ENDLESSBUTTON = function()
