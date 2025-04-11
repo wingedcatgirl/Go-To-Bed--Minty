@@ -11,6 +11,7 @@ position = "at"
 payload = "        not show_win_cta and UIBox_button({id = 'from_game_won', button = GTB.WINBUTTON(), label = {localize(GTB.WINLABEL())}, minw = 2.5, maxw = 2.5, minh = 1, focus_args = {nav = 'wide', snap_to = true}}) or nil,"
 match_indent = true
 
+# Delete Endless Mode button
 [[patches]]
 [patches.pattern]
 target = "functions/UI_definitions.lua"
@@ -21,7 +22,7 @@ position = "at"
 payload = '''    {n=G.UIT.R, config={align = "cm", padding = 0.08}, nodes=GTB.ENDLESSBUTTON()},'''
 match_indent = true
 
-# Same at game over
+# Remove New Run button at game over
 [[patches]]
 [patches.pattern]
 target = "functions/UI_definitions.lua"
@@ -36,4 +37,26 @@ payload = '''          {n=G.UIT.R, config={id = 'from_game_over', align = "cm", 
               {n=G.UIT.T, config={text = localize(GTB.DIELABEL()), scale = 0.5, colour = G.C.UI.TEXT_LIGHT}}
             }}
           }},'''
+match_indent = true
+
+# Remove Main Menu button on win 
+[[patches]]
+[patches.pattern]
+target = "functions/UI_definitions.lua"
+pattern = "        not show_win_cta and UIBox_button({button = 'go_to_menu', label = {localize('b_main_menu')}, minw = 2.5, maxw = 2.5, minh = 1, focus_args = {nav = 'wide'}}) or nil,"
+position = "at"
+payload = "        not show_win_cta and GTB.WINMENUBUTTON() or nil,"
+match_indent = true
+
+# Remove Main Menu button on die 
+[[patches]]
+[patches.pattern]
+target = "functions/UI_definitions.lua"
+pattern = '''          {n=G.UIT.R, config={align = "cm", minw = 5, padding = 0.1, r = 0.1, hover = true, colour = G.C.RED, button = "go_to_menu", shadow = true, focus_args = {nav = 'wide'}}, nodes={
+            {n=G.UIT.R, config={align = "cm", padding = 0, no_fill = true, maxw = 4.8}, nodes={
+              {n=G.UIT.T, config={text = localize('b_main_menu'), scale = 0.5, colour = G.C.UI.TEXT_LIGHT}}
+            }}
+          }}'''
+position = "at"
+payload = '''          GTB.DIEMENUBUTTON()'''
 match_indent = true

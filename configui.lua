@@ -31,6 +31,11 @@ SMODS.current_mod.config_tab = function()
                 ref_value = 'no_endless',
             }),
             create_toggle({
+                label = "Remove Main Menu button",
+                ref_table = GTB.config,
+                ref_value = 'no_main_menu',
+            }),
+            create_toggle({
                 label = "Activate only at bedtime",
                 ref_table = GTB.config.bedtime,
                 ref_value = 'active',
