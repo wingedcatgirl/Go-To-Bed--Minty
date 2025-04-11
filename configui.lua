@@ -1,14 +1,14 @@
 G.FUNCS.gtb_setTime = function(args)
     local refval = args.cycle_config.ref_value
     local opt = args.cycle_config.current_option
-    sendDebugMessage(refval, "GTB")
-    sendDebugMessage(opt, "GTB")
+    --sendDebugMessage(refval, "GTB")
+    --sendDebugMessage(opt, "GTB")
     if string.match(refval, "minute") then
         opt = (opt - 1) * 5
     else
         opt = opt - 1
     end
-    sendDebugMessage(opt, "GTB")
+    --sendDebugMessage(opt, "GTB")
     GTB.config.bedtime[refval] = opt
 end
 
