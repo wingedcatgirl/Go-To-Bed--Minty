@@ -26,6 +26,11 @@ SMODS.current_mod.config_tab = function()
                 ref_value = 'quit_on_win',
             }),
             create_toggle({
+                label = "Ban Endless Mode",
+                ref_table = GTB.config,
+                ref_value = 'no_endless',
+            }),
+            create_toggle({
                 label = "Activate only at bedtime",
                 ref_table = GTB.config.bedtime,
                 ref_value = 'active',

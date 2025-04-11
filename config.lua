@@ -1,5 +1,6 @@
 return {
     ["quit_on_win"] = true,
+    ["no_endless"] = false,
     ["quit_on_die"] = false,
     ["bedtime"] = {
         ["active"] = true,
