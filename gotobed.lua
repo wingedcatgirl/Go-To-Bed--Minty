@@ -12,9 +12,9 @@ GTB.isItBedtime = function()
     local endTime = (GTB.config.bedtime.end_hour * 60) + GTB.config.bedtime.end_minute
     local currentTime = (tonumber(os.date("%H"))*60) + tonumber(os.date("%M"))
 
-    sendDebugMessage("startTime: "..startTime)
-    sendDebugMessage("endTime: "..endTime)
-    sendDebugMessage("currentTime: "..currentTime)
+    --sendDebugMessage("startTime: "..startTime)
+    --sendDebugMessage("endTime: "..endTime)
+    --sendDebugMessage("currentTime: "..currentTime)
 
     if startTime < endTime then
         return currentTime > startTime and currentTime < endTime
